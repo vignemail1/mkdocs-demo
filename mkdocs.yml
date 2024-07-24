@@ -1,5 +1,5 @@
 site_name: Site demo
-site_description: 'Site web de demo'
+site_description: 'Site web de demo mkdocs'
 theme:
   name: 'material'
   language: 'fr'
