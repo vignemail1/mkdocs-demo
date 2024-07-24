@@ -8,20 +8,29 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]  # Trigger the workflow when a PR is opened, synchronized or reopened
 
+permissions:
+  contents: write
+
 jobs:
   build-and-publish:
     runs-on: ubuntu-latest  # The GitHub Actions runner to use
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           submodules: true  # Enable checking out submodules
 
-      - name: Setup Python
-        uses: actions/setup-python@v3
+      - uses: actions/setup-python@v5
         with:
-          python-version: 3.9  # The version of Python to use
+          python-version: 3.x
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
+      - uses: actions/cache@v4
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            mkdocs-material-
 
       - name: Install dependencies
         run: |
