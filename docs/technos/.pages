@@ -1,0 +1,4 @@
+# On force le titre au lieu de unslug à partir du nom du dossier
+title: 'Technos'
+# Tout dossier ne contenant qu'un fichier sera vu comme si cela avait été une page directe
+collapse_single_pages: true

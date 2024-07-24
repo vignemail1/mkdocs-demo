@@ -1,0 +1,102 @@
+site_name: Site demo
+site_description: 'Site web de demo'
+theme:
+  name: 'material'
+  language: 'fr'
+  logo: 'https://avatar.iran.liara.run/public/job/designer/male'
+  highlightjs: true
+  
+  palette: 
+
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    # scheme: preference
+    # primary: indigo
+    # accent: red
+  features:
+    - tabs
+    - navigation.tabs # avoir le premier niveau de dossier comme menu principal
+    - navigation.footer # avoir un footer de navigation
+    # - instant
+  font:
+    text: 'Ubuntu'
+    code: 'Ubuntu Mono'
+
+extra_css:
+  - '_assets/css/styles.css' # personnaliser certains aspects
+
+extra:
+  version:
+    provider: mike # permet de builder avec mike de multiples versions, par exemple dans un pipeline et lié à un tag
+  generator: false
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - codehilite:
+      guess_lang: false
+      linenums: false
+  - meta
+  - footnotes
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.progressbar
+  - pymdownx.saneheaders
+  - pymdownx.smartsymbols
+  - pymdownx.snippets
+  - pymdownx.superfences:
+      custom_fences: ## a decommenter au premier usage de MermaidJS
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+plugins:
+  - search
+  - awesome-pages
+  - blog #:
+      # authors_profiles: true (version insider de material for mkdocs (patreon) pour le moment)
+  - tags
+  - privacy
+  - offline
+  - mike:
+      # These fields are all optional; the defaults are as below...
+      alias_type: symlink
+      redirect_template: null
+      deploy_prefix: ''
+      canonical_version: null
+      version_selector: true
+      css_dir: css
+      javascript_dir: js
