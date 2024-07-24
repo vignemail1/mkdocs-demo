@@ -1,10 +1,10 @@
 # Base d'un site material for mkdocs
 
-![accueil](docs/_assets/images/demo-accueil.png)
-![search](docs/_assets/images/demo-search.png)
-![techno PHP syntaxe](docs/_assets/images/demo-technos-php.png)
-![blog](docs/_assets/images/demo-blog.png)
-![blog post](docs/_assets/images/demo-blog-post.png)
+![accueil](images/demo-accueil.png)
+![search](images/demo-search.png)
+![techno PHP syntaxe](images/demo-technos-php.png)
+![blog](images/demo-blog.png)
+![blog post](images/demo-blog-post.png)
 
 Material for Mkdocs : <https://squidfunk.github.io/mkdocs-material/getting-started/>
 
