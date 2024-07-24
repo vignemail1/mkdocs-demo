@@ -4,7 +4,7 @@ name: Build and Publish MkDocs to GitHub Pages
 on:
   push:
     branches:
-      - gh-pages  # Set a branch name to trigger the workflow on push to this branch
+      - main  # Set a branch name to trigger the workflow on push to this branch
   pull_request:
     types: [opened, synchronize, reopened]  # Trigger the workflow when a PR is opened, synchronized or reopened
 
