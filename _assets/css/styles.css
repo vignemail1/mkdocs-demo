@@ -1,0 +1,13 @@
+/* For a full page width (fluid grid): */
+
+
+/* .md-grid {
+    max-width: inherit;
+} */
+
+
+/* For nearly full page width */
+
+.md-grid {
+    max-width: calc(100% - 6rem);
+}
