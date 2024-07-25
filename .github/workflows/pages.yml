@@ -20,10 +20,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           submodules: true  # Enable checking out submodules
-
+      - name: Configure Git Credentials
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
       - uses: actions/setup-python@v5
         with:
-          python-version: 3.x
+          python-version: 3.12
       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
       - uses: actions/cache@v4
         with:
@@ -37,11 +40,5 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Build MkDocs site
-        run: mkdocs build
-
-      - name: Publish to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}  # The GitHub token for authentication
-          publish_dir: ./site
+      - name: Build and publish the MkDocs site
+        run: mkdocs gh-deploy --force
